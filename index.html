@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 18th Monthaversary, Sayon ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="stars-container"></div>
+    <div class="floating-hearts-bg" id="floatingHeartsBg"></div>
+
+    <!-- Music Player Controls & Audio -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-btn" title="Play 'we fell in love in october' by girl in red">
+            <span class="music-icon">🎵</span>
+            <span class="music-text">Play "we fell in love in october" 🎶</span>
+        </button>
+    </div>
+
+    <!-- Hidden YouTube Audio Player -->
+    <div style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none;">
+        <div id="youtubePlayer"></div>
+    </div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="badge">18 Months of Love & Distance Bridged 💕</div>
+            <h1 class="title">Happy 18th Monthaversary, <span class="highlight">Sayon</span></h1>
+            <p class="subtitle">1.5 years of loving you across every single mile.</p>
+            <div class="hero-heart" id="mainHeart">💖</div>
+        </header>
+
+        <!-- Distance & Time Counter Section -->
+        <section class="card time-card">
+            <h2>Counting Every Second With You</h2>
+            <div class="timer-grid" id="timerGrid">
+                <div class="time-box">
+                    <span id="monthsCount" class="time-num">18</span>
+                    <span class="time-label">Months Together</span>
+                </div>
+                <div class="time-box">
+                    <span id="daysCount" class="time-num">547</span>
+                    <span class="time-label">Days of Smiles</span>
+                </div>
+                <div class="time-box">
+                    <span id="hoursCount" class="time-num">13,100+</span>
+                    <span class="time-label">Hours of Loving You</span>
+                </div>
+            </div>
+            <p class="distance-quote">"No matter how many miles separate us, you are always the closest thing to my heart."</p>
+        </section>
+
+        <!-- Love Letter Section -->
+        <section class="card letter-card">
+            <div class="letter-header">
+                <h2>My Letter To You 💌</h2>
+                <span class="envelope-icon">📩</span>
+            </div>
+            <div class="letter-content">
+                <p>Dearest Sayon,</p>
+                <p>Can you believe it’s already been <strong>18 months</strong>? 1.5 years ago, you walked into my life and turned every ordinary moment into something extraordinary.</p>
+                <p>Being long distance isn't always easy, but loving you is the easiest thing I've ever done. Every late-night phone call, every cozy video date, every shared laugh, and every countdown until we see each other again makes every mile completely worth it.</p>
+                <p>Thank you for being my anchor, my favorite notification, my biggest supporter, and my sweetest dream come true. Here's to 18 months of pure happiness and to many, many more chapters together.</p>
+                <p class="signature">Forever & Always yours ❤️</p>
+            </div>
+        </section>
+
+        <!-- Interactive Memory / Highlights Box -->
+        <section class="card highlights-card">
+            <h2>Why I Love Our Journey ✨</h2>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <span class="reason-icon">📱</span>
+                    <h3>Late Night Calls</h3>
+                    <p>Falling asleep to the sound of your voice is my absolute favorite routine.</p>
+                </div>
+                <div class="reason-item">
+                    <span class="reason-icon">✈️</span>
+                    <h3>Counting Down Days</h3>
+                    <p>No distance can dull the excitement of our next big embrace.</p>
+                </div>
+                <div class="reason-item">
+                    <span class="reason-icon">🌟</span>
+                    <h3>My Favorite Human</h3>
+                    <p>You bring warmth, comfort, and so much sweetness into my everyday life.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Surprises Section -->
+        <section class="card surprise-card">
+            <h2>A Little Surprise For You 🎁</h2>
+            <p>Click the buttons below to open your monthaversary virtual gifts!</p>
+            <div class="button-group">
+                <button class="btn btn-primary" id="hugBtn">Send Virtual Warm Hug 🤗</button>
+                <button class="btn btn-secondary" id="kissBtn">Send Virtual Kisses 💋</button>
+                <button class="btn btn-accent" id="celebrateBtn">Celebrate 18 Months 🎉</button>
+            </div>
+            <div id="surpriseMessage" class="surprise-message hidden"></div>
+        </section>
+
+        <!-- Cute Interactive Notes / Memory Cards -->
+        <section class="card notes-card">
+            <h2>Tap a Note for Sayon 💌</h2>
+            <div class="notes-grid">
+                <div class="note-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">When I miss you...</div>
+                        <div class="card-back">I look at our pictures and smile knowing how lucky I am. 💕</div>
+                    </div>
+                </div>
+                <div class="note-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">My promise to you...</div>
+                        <div class="card-back">To always listen, hold your hand, and love you more every day. 🤝✨</div>
+                    </div>
+                </div>
+                <div class="note-card" onclick="flipCard(this)">
+                    <div class="card-inner">
+                        <div class="card-front">Favorite thing about you...</div>
+                        <div class="card-back">Your gentle kindness and the magic way you light up my life! 🌸</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with all my heart for <strong>Sayon</strong> • Happy 18th Monthaversary! 💕</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
